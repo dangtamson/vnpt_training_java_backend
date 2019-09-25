@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/main">
+<head>
+<title>Bảng tin</title>
+<script type="text/javascript"
+	src="/reata/public/skinmedic/vendor/highchart/highchart.js"></script>
+<link rel="stylesheet" href="/reata/public/skinmedic/css/dashboard.css">
+<script type="text/javascript" src="/reata/public/js/reata/pages/common/dashboard.js"></script>
+</head>
+<body>
+	<div layout:fragment="content">
+
+		<div class="dashboard-canvas statistics" style="margin-top: 10px">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 thongke">
+					<div class="item c-green">
+						<div class="detail">
+							<span class="txt">Thống kê</span> <span class="number"
+								id="pTongLuotKham">0</span>
+						</div>
+						<div class="icon">
+							<i class="fa fa-file-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 thongke">
+					<div class="item item c-yellow">
+						<div class="detail">
+							<span class="txt">Thống kê</span> <span class="number"
+								id="pTongDangKham">0</span>
+						</div>
+						<div class="icon">
+							<i class="fa fa-share-square-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 thongke">
+					<div class="item item c-blue">
+						<div class="detail">
+							<span class="txt">Biểu đồ</span> <span class="number"
+								id="pTongChoThanhToan">0</span>
+						</div>
+						<div class="icon">
+							<i class="fa fa-pencil-square-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 thongke">
+					<div class="item item c-red">
+						<div class="detail">
+							<span class="txt">Biểu đồ </span> <span class="number"
+								id="pTongHenKham">0</span>
+						</div>
+						<div class="icon">
+							<i class="fa fa-support"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dashboard-canvas">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<div class="panel">
+						<div class="panel-heading">
+							<div class="pull-left title">Biểu đồ</div>
+							<div class="pull-right">
+								<div class="dropdown select-dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button"
+										data-toggle="dropdown">
+										Theo tháng <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Năm hiện tại</a></li>
+										<li><a href="#">Tháng nay</a></li>
+										<li><a href="#">Năm nay</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="panel-body">
+							<div id="chart-bar" style="height: 320px;"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<div class="panel">
+						<div class="panel-heading">
+							<div class="title">Biểu đồ</div>
+						</div>
+						<div class="panel-body">
+							<div id="chart-line" style="height: 320px;"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

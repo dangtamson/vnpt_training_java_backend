@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript"
+	src="/reata/public/js/reata/core/AuthenHelper.js"></script>
+<script type="text/javascript"
+	src="/reata/public/js/reata/pages/common/LoginView.js"></script>
+<script type="text/javascript" src="/reata/public/js/reata/modules/topbar.js"></script>
+<script type="text/javascript">
+	//var oTopBar = new TopBar();
+	
+	var oAuthenHelper = new AuthenHelper(oReataConfig);
+</script>
+</head>
+
+<body>
+	<div th:fragment="topbar">
+		<div class="nav-icon">
+			<span class="-ap icon-menu2"></span>
+		</div>
+		<div class="header-left pull-left">
+			<div class="sub-title">TỔNG CÔNG TY ABC</div>
+			<div class="title">Phần mềm quản lý REATA</div>
+		</div>
+		<div class="header-right pull-right">
+			<div class="item -noti">
+				<div class="notify">
+					<span class="icon -ap icon-notifications_none"></span> <span
+						class="status"></span>
+				</div>
+			</div>
+			<div class="item -info">
+				<span class="icon -ap icon-coin-dollar c-red"></span> <b
+					class="c-red">10</b>
+				<div class="dropdown">
+					<div class="title">Danh sÃ¡ch chÆ°a thanh toÃ¡n</div>
+					<div class="mscrollable" style="max-height: 300px;">
+						<ul class="dropdown-menu">
+
+							<li><a href="#">
+
+									<div class="text">
+										<p class="name">
+											KhÃ¡ch hÃ ng: <span class="txt">Nguyá»…n VÄƒn B</span> - <i
+												class="number">0911118683 </i>
+										</p>
+										<p class="time">
+											<span class="icon  icon-uniF10B -ap"> </span> 3/1/2018
+											5:00:07 AM
+										</p>
+
+									</div>
+							</a></li>
+						</ul>
+					</div>
+					<a href="" class="btn-viewall"> Xem táº¥t cáº£ <span
+						class="-ap icon-chevron-right22 icon"></span>
+					</a>
+				</div>
+			</div>
+			<div class="item -schedule -noti">
+				<div class="dropdown">
+					<div class="title">LÃ¡Â»â€¹ch hÃ¡ÂºÂ¹n</div>
+					<div class="mscrollable" style="max-height: 300px;">
+						<ul class="dropdown-menu">
+
+							<li><a href="#">
+
+									<div class="text">
+										<p class="name">
+											BÃ¡Â»â€¡nh nhÃƒÂ¢n: <span class="txt">NguyÃ¡Â»â€¦n
+												VÃ„Æ’n B</span> - <i class="number">0911118683 </i>
+										</p>
+										<p class="doctor-name">
+											BÃƒÂ¡c sÃ„Â© khÃƒÂ¡m: <b>Mario Ozawa</b>
+										</p>
+										<p class="time">
+											<span class="icon  icon-uniF10B -ap"> </span> 3/1/2018
+											5:00:07 AM
+										</p>
+
+									</div>
+							</a></li>
+						</ul>
+					</div>
+					<a href="" class="btn-viewall"> Xem tÃ¡ÂºÂ¥t cÃ¡ÂºÂ£ <span
+						class="-ap icon-chevron-right22 icon"></span>
+					</a>
+				</div>
+			</div>
+			<div class="item -schedule datetime">
+				<span class="-ap icon-access_time icon c-red"></span> <span
+					class="date c-red" id="DongHo"
+					style="font-size: 18px; font-weight: bold"></span>
+			</div>
+
+			<div class="item -user">
+				<div class="user">
+					<div class="avatar"
+						style="background-image: url(/public/skinmedic/uploads/avatar.jpg);">
+
+					</div>
+					<div class="username" id="UserInfo">
+						<p class="name">Bùi Đức Hiếu</p>
+						<p class="pos">Quản trị hệ thống</p>
+					</div>
+					<div class="down">
+						<span class="icon -ap icon-triangle-down"></span>
+					</div>
+
+				</div>
+				<ul class="dropdown-menu">
+					<li class="username">ADMIN</li>
+					<li><a href="#" data-toggle="modal"
+						data-target="#modChangePass"><span class="fa fa-edit icon"></span>
+							Đổi mật khẩu</a></li>
+					<li><a href="/reata" id="btnSignOut"><span
+							class="fa fa-sign-out icon"></span> Thoát</a></li>
+				</ul>
+			</div>
+			<div id="modChangePass" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Ã„ï¿½Ã¡Â»â€¢i mÃ¡ÂºÂ­t khÃ¡ÂºÂ©u</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group-sm">
+								<label>MÃ¡ÂºÂ­t khÃ¡ÂºÂ©u cÃ…Â© <span class="require">(*)</span></label>
+								<input type="password" id="txtOldPass" class="form-control" />
+							</div>
+							<div class="form-group-sm">
+								<label>MÃ¡ÂºÂ­t khÃ¡ÂºÂ©u mÃ¡Â»â€ºi <span
+									class="require">(*)</span></label> <input type="password"
+									id="txtNewPass" class="form-control" />
+							</div>
+							<div class="form-group-sm">
+								<label>XÃƒÂ¡c nhÃ¡ÂºÂ­n mÃ¡ÂºÂ­t khÃ¡ÂºÂ©u mÃ¡Â»â€ºi <span
+									class="require">(*)</span></label> <input type="password"
+									id="txtNewPass1" class="form-control" />
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btnChangePass" class="btn btn-warning">Ã„ï¿½Ã¡Â»â€¢i
+								mÃ¡ÂºÂ­t khÃ¡ÂºÂ©u</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Ã„ï¿½ÃƒÂ³ng</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

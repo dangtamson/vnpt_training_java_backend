@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/popup">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý nhân viên</title>
+    <script type="text/javascript" src="/reata/public/js/reata/model/DmNhanVien.js"></script>
+    <script type="text/javascript" src="/reata/public/js/reata/app/danhmuc/DmNhanVienInfoView.js"></script>
+    <script type="text/javascript">
+        var oDmNhanVien = new DmNhanVien();
+        var oDmNhanVienInfoView = new DmNhanVienInfoView();
+    </script>
+    <style type="text/css">
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div layout:fragment="content">
+
+        <div class="row DmNhanVienList">
+            <div class="col-sm-12" style="margin:0px">
+                <div class="col-sm-12">
+                    <form class="row FORM well well-sm">
+                        <div class="col-sm-4"><label>Mã</label></div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="Ma" value="" disabled="disabled"/>
+                        </div>
+                        <div class="col-sm-4"><label>Họ và tên</label></div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="Ten" value="" disabled="disabled"/>
+                        </div>
+                        <div class="col-sm-4"><label>Tài khoản</label></div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="Username" value="" disabled="disabled"/>
+                        </div>
+                        <div class="col-sm-4"><label>Quyền hạn</label></div>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="Quyenhan" disabled="disabled">
+                                <option value="0">Khách</option>
+                                <option value="2">Kế toán</option>
+                                <option value="3">Quản lý giám sát</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4"><label>Trạng thái</label></div>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="Khoa" disabled="disabled">
+                                <option value="0">Kích hoạt</option>
+                                <option value="1">Khóa</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

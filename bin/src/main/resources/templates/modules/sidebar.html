@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Header</title>
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+	<div th:fragment="sidebar">
+		<script type="text/javascript" src="/reata/public/js/reata/model/DmChucNang.js"></script>
+		<script type="text/javascript" src="/reata/public/js/reata/modules/sidebar.js"></script>
+		<script type="text/javascript">
+			var oDmChucNangSideBar = new DmChucNang();
+			var oSidebar = new Sidebar();
+		</script>
+		<div class="sidebar-menu">
+			<div class="top">
+				<a class="logo"> <img src="/reata/public/skinmedic/img/logo-entic.png" alt="Logo">
+				</a>
+			</div>
+			<div class="navbar">
+				<div class="menus">
+					<div class="item">
+						<a id="com_dashboard" href="/reata/app/common/dashboard" class="url menu_chucnang"> <span
+								class="icon -ap  icon-home"></span>
+							<span class="text">Bảng điều khiển </span>
+						</a>
+					</div>
+
+					<div class="item active">
+						<a href="#" class="url"> <span class="icon -ap  icon-menu2"></span>
+							<span class="text"> Hệ thống </span> <span class="down"> <span
+									class="-ap  icon-chevron-down2"></span>
+							</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="menu_chucnang" id="ht_nguoidung" href="/reata/app/hethong/nguoidung"> Người
+									dùng</a></li>
+							<li><a class="menu_chucnang" id="ht_huongdansudung"
+									href="/reata/app/hethong/huongdansudung"> Hướng dẫn sử dụng</a></li>
+						</ul>
+					</div>
+
+					<div class="item">
+						<a href="#" class="url"> <span class="icon -ap  icon-menu2"></span>
+							<span class="text"> Doanh thu chi phí </span> <span class="down">
+								<span class="-ap  icon-chevron-down2"></span>
+							</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="menu_chucnang" id="dtcp_nhapchiphi" href="/reata/app/dtcp/nhapchiphi"> Nhập
+									chi phí</a></li>
+							<li><a class="menu_chucnang" id="dtcp_danhsachchiphi" href="/reata/app/dtcp/danhsachchiphi">
+									Danh sách chi phí</a></li>
+							<li><a class="menu_chucnang" id="dtcp_hopdong" href="/reata/app/dtcp/hopdong"> Hợp đồng</a>
+							</li>
+							<li><a class="menu_chucnang" id="dtcp_tonghopre" href="/reata/app/dtcp/tonghopre"> Tổng hợp
+									RE</a></li>
+						</ul>
+					</div>
+
+					<div class="item">
+						<a href="#" class="url"> <span class="icon -ap  icon-menu2"></span>
+							<span class="text"> Danh mục </span> <span class="down"> <span
+									class="-ap  icon-chevron-down2"></span>
+							</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="menu_chucnang" id="dm_khachhang" href="/reata/app/danhmuc/khachhang"> Khách hàng</a></li>
+							<li><a class="menu_chucnang" id="dm_nhanvien" href="/reata/app/danhmuc/nhanvien_list"> Nhân
+									viên</a></li>
+							<li><a class="menu_chucnang" id="dm_chucnang" href="/reata/app/danhmuc/chucnang"> Chức
+									năng</a></li>
+							<li><a class="menu_chucnang" id="dm_khoanchi" href="/reata/app/danhmuc/khoanchi"> Khoản
+									chi</a></li>
+							<li><a class="menu_chucnang" id="dm_loaichungtu" href="/reata/app/danhmuc/loaichungtu"> Loại
+									chứng từ</a></li>
+							<li><a class="menu_chucnang" id="dm_loaidichvu" href="/reata/app/danhmuc/loaidichvu"> Loại
+									dịch vụ</a></li>
+							<li><a class="menu_chucnang" id="dm_loaichiphi" href="/reata/app/danhmuc/loaichiphi"> Loại
+									chi phí</a></li>
+							<li><a class="menu_chucnang" id="dm_test"
+									href="/reata/app/test/test_dispatch?params=121312411"> Test
+									dispatch</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
