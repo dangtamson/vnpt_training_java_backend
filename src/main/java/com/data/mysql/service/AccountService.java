@@ -80,7 +80,7 @@ public class AccountService {
 		mParams.put("i_extradata", sExtraData);
 		try {
 
-			String sJson = oUtil.callStoreProcedure2Json("sp_account_signin",mParams);
+			String sJson = oUtil.callStoreProcedure2Json("sp_vnpt_account_signin",mParams);
 			 List<SigninResponse> list = mapper.readValue(sJson, new
 			 TypeReference<List<SigninResponse>>() { }); if (list.size() > 0) { oRsp =list.get(0); }
 
