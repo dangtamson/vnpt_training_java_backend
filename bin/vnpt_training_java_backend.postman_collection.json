@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "d601ebea-5e1e-41b9-a682-fe3209d2033b",
+		"name": "vnpt_training_java_backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "473f4ba6-86ee-45fa-8704-134f728e7270",
+						"exec": [
+							"pm.globals.set(\"token\",pm.response.json().RESULT.Token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"admin\",\n\t\"password\":\"123456\",\n\t\"extradata\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/data/api/v1/public/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"data",
+						"api",
+						"v1",
+						"public",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "public/data/get",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "appcode",
+						"value": "vnad_vnpt",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://localhost:8089/data/api/v1.0/data/get/vnpt_thuoc/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"data",
+						"api",
+						"v1.0",
+						"data",
+						"get",
+						"vnpt_thuoc",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "public/data/set",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "appcode",
+						"type": "text",
+						"value": "vnad_vnpt"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"thuocid\":0,\n\t\"ma\":\"thuoc_test\",\n\t\"ten\":\"Thuốc test\",\n\t\"ghichu\":\"Test ghi chú\",\n\t\"trangthai\":1,\n\t\"donvitinhid\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8089/data/api/v1.0/data/set/vnpt_thuoc/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"data",
+						"api",
+						"v1.0",
+						"data",
+						"set",
+						"vnpt_thuoc",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,24 @@
+ ##################################################################
+#                                                                #
+#################### MULTI DATABASE CONFIG #######################
+#                                                                #
+################################################################## 
+       
+multitenancy:
+    database:
+      dataSourceList:
+        - 
+          appid: 1
+          appcode: vnad_vnpt
+          appname: Hệ thống xác thực tập trung MedicAuthen
+          schema: vnad_vnpt
+          host: 103.9.77.49
+          port: 1366
+          servicename:
+          username: vnad_vnpt
+          password: Vnpt@123
+          status: 1
+          url: jdbc:mysql://103.9.77.49/vnad_vnpt?useUnicode=yes&characterEncoding=UTF-8
+          driverclassname: com.mysql.jdbc.Driver
+          connectiontimeout:        
+      
